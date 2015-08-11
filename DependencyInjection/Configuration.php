@@ -24,7 +24,10 @@ class Configuration implements ConfigurationInterface
         // configure your bundle. See the documentation linked above for
         // more information on that topic.
 
-        $rootNode->children()->node('extend_template', 'scalar');
+        $rootNode->children()
+            ->node('extend_template', 'scalar')
+            ->end()
+            ->node('disqus_shortname', 'scalar');
 
         return $treeBuilder;
     }

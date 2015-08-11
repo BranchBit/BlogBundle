@@ -23,6 +23,7 @@ class BBITBlogExtension extends Extension
         $config = $this->processConfiguration($configuration, $configs);
 
         $container->setParameter('bbit_blog.extend_template', $config['extend_template']);
+        $container->setParameter('bbit_blog.disqus_shortname', $config['disqus_shortname']);
 
         $loader = new Loader\YamlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         $loader->load('services.yml');
