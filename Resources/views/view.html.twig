@@ -5,12 +5,13 @@
 
 {% block blogContent %}
 
-        <h3 style="text-underline: auto">
-            <i class="icon-calendar"></i>{{ post.createdAt|date() }}
-        </h3>
-        <h1>
+
+        <span class="h1" style="line-height: 0%;">
             <a href="{{ path('bbit_blog_view', {'slug': post.slug}) }}">{{ post.title }}</a>
-        </h1>
+        <br>
+            <i class="icon-calendar" style="font-size: small; "> {{ post.createdAt|date('d/m/Y') }}</i>
+        </span>
+    <br>
         <p>
             {{ post.body|markdown }}
         </p>

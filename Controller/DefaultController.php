@@ -10,9 +10,14 @@ class DefaultController extends Controller
     {
 
         $templateToExtend = $this->container->getParameter('bbit_blog.extend_template');
+        $btn_class = $this->container->getParameter('bbit_blog.btn_class');
 
         $posts = $this->get('doctrine.orm.entity_manager')->getRepository('BBITBlogBundle:Post')->findBy(array('published' => true));
-        return $this->render('BBITBlogBundle::list.html.twig', array('templateToExtend' => $templateToExtend, 'posts' => $posts));
+        return $this->render('BBITBlogBundle::list.html.twig', array(
+            'templateToExtend' => $templateToExtend,
+            'posts' => $posts,
+            'btn_class' => $btn_class
+        ));
     }
 
     public function viewAction($slug)
