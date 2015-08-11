@@ -1,0 +1,4 @@
+services:
+#    bbit_blog.example:
+#        class: BBIT\BlogBundle\Example
+#        arguments: [@service_id, "plain_value", %parameter%]

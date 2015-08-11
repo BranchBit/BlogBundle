@@ -1,0 +1,36 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+
+
+    {% stylesheets filter="cssrewrite" debug=true
+    'bundles/bbitwebsite/plugins/bootstrap/css/bootstrap.min.css'
+    'bundles/bbitblog/markdown/css/bootstrap-markdown.min.css' %}
+    <link rel="stylesheet" href="{{ asset_url }}" />
+    {% endstylesheets %}
+    {% javascripts debug=true
+    '//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js'
+    '//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js'
+    '//www.codingdrama.com/bootstrap-markdown/js/markdown.js'
+    '//www.codingdrama.com/bootstrap-markdown/js/to-markdown.js'
+    '//www.codingdrama.com/bootstrap-markdown/js/bootstrap-markdown.js'
+    %}
+    <script language="javascript" type="text/javascript" src="{{ asset_url }}" ></script>
+    {% endjavascripts %}
+
+
+
+
+    <h1>Post edit</h1>
+
+    {{ form(edit_form) }}
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('admin_blog_post') }}">
+            Back to the list
+        </a>
+    </li>
+    <li>{{ form(delete_form) }}</li>
+</ul>
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends templateToExtend %}
+
+{% block title %}Blog - {{ post.title }}{% endblock %}
+{# fix title some other way, dont taint bundle #}
+
+{% block blogContent %}
+
+        <h3 style="text-underline: auto">
+            <i class="icon-calendar"></i>{{ post.createdAt|date() }}
+        </h3>
+        <h1>
+            <a href="{{ path('bbit_blog_view', {'slug': post.slug}) }}">{{ post.title }}</a>
+        </h1>
+        <p>
+            {{ post.body|markdown }}
+        </p>
+
+        <div id="disqus_thread"></div>
+
+
+    <script type="text/javascript">
+
+        var disqus_shortname = 'branchbit';
+        var disqus_identifier = '{{ post.id }}';
+        var disqus_title = '{{ post.title }}';
+        var disqus_url = '{{ app.request.getSchemeAndHttpHost() }}{{ app.request.getRequestUri() }}';
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+{% endblock %}
