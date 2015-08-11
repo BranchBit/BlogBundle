@@ -11,7 +11,9 @@
         </h1>
         <p>
             {{ post.getShortBody|markdown }}
+            <a href="{{ path('bbit_blog_view', {'slug': post.slug}) }}">Read More</a>
         </p>
+
 
         <hr>
 
