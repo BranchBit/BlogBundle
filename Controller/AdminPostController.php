@@ -9,10 +9,10 @@ use BBIT\BlogBundle\Entity\Post;
 use BBIT\BlogBundle\Form\PostType;
 
 /**
- * Post controller.
+ * Admin Post controller.
  *
  */
-class PostController extends Controller
+class AdminPostController extends Controller
 {
 
     /**
