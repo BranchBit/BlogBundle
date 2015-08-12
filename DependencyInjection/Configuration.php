@@ -32,6 +32,8 @@ class Configuration implements ConfigurationInterface
                 ->end()
                 ->node('btn_class', 'scalar')->defaultValue('btn btn-primary')
                 ->end()
+                ->node('addthis_pubid', 'scalar')
+                ->end()
             ->end();
 
         return $treeBuilder;

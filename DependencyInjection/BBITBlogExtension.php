@@ -25,6 +25,7 @@ class BBITBlogExtension extends Extension
         $container->setParameter('bbit_blog.extend_template', $config['extend_template']);
         $container->setParameter('bbit_blog.disqus_shortname', $config['disqus_shortname']);
         $container->setParameter('bbit_blog.btn_class', $config['btn_class']);
+        $container->setParameter('bbit_blog.addthis_pubid', $config['addthis_pubid']);
 
         $loader = new Loader\YamlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         $loader->load('services.yml');
