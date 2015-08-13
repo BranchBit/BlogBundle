@@ -222,7 +222,7 @@ class Post implements RoutedItemInterface
     }
 
     public function getFeedItemUrlAnchor(){
-        return '#';
+
     }
 
 }
