@@ -1,30 +1,30 @@
 admin_blog_post:
     path:     /
-    defaults: { _controller: "BBITBlogBundle:Post:index" }
+    defaults: { _controller: "BBITBlogBundle:AdminPost:index" }
 
 admin_blog_post_show:
     path:     /{id}/show
-    defaults: { _controller: "BBITBlogBundle:Post:show" }
+    defaults: { _controller: "BBITBlogBundle:AdminPost:show" }
 
 admin_blog_post_new:
     path:     /new
-    defaults: { _controller: "BBITBlogBundle:Post:new" }
+    defaults: { _controller: "BBITBlogBundle:AdminPost:new" }
 
 admin_blog_post_create:
     path:     /create
-    defaults: { _controller: "BBITBlogBundle:Post:create" }
+    defaults: { _controller: "BBITBlogBundle:AdminPost:create" }
     methods:  POST
 
 admin_blog_post_edit:
     path:     /{id}/edit
-    defaults: { _controller: "BBITBlogBundle:Post:edit" }
+    defaults: { _controller: "BBITBlogBundle:AdminPost:edit" }
 
 admin_blog_post_update:
     path:     /{id}/update
-    defaults: { _controller: "BBITBlogBundle:Post:update" }
+    defaults: { _controller: "BBITBlogBundle:AdminPost:update" }
     methods:  [POST, PUT]
 
 admin_blog_post_delete:
     path:     /{id}/delete
-    defaults: { _controller: "BBITBlogBundle:Post:delete" }
+    defaults: { _controller: "BBITBlogBundle:AdminPost:delete" }
     methods:  [POST, DELETE]
