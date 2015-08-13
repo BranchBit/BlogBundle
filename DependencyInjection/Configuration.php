@@ -34,6 +34,8 @@ class Configuration implements ConfigurationInterface
                 ->end()
                 ->node('addthis_pubid', 'scalar')
                 ->end()
+                ->variableNode('eko_feed')
+                ->end()
             ->end();
 
         return $treeBuilder;

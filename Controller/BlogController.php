@@ -3,6 +3,7 @@
 namespace BBIT\BlogBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\Response;
 
 class BlogController extends Controller
 {
@@ -36,4 +37,15 @@ class BlogController extends Controller
 
         ));
     }
+
+
+    public function rssAction()
+    {
+        $posts = $this->get('doctrine.orm.entity_manager')->getRepository('BBITBlogBundle:Post')->findBy(array('published' => true), array('createdAt' => 'DESC'));
+        $feed = $this->get('eko_feed.feed.manager')->get('post');
+        $feed->addFromArray($posts);
+
+        return new Response($feed->render('rss')); // or 'atom'
+    }
+
 }

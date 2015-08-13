@@ -2,13 +2,14 @@
 namespace BBIT\BlogBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Eko\FeedBundle\Item\Writer\RoutedItemInterface;
 
 /**
  * @ORM\Entity
  * @ORM\Table(name="blog_post")
  *
  */
-class Post
+class Post implements RoutedItemInterface
 {
     const SHORTBODY_LENGTH = 200;
 
@@ -166,6 +167,62 @@ class Post
         }
 
         return preg_replace('/\s+?(\S+)?$/', '', substr($this->body, 0, (SELF::SHORTBODY_LENGTH+1)))."...";
+    }
+
+
+
+
+    /**
+     * This method returns feed item title
+     *
+     * @abstract
+     *
+     * @return string
+     */
+    public function getFeedItemTitle(){
+        return $this->title;
+    }
+
+    /**
+     * This method returns feed item description (or content)
+     *
+     * @abstract
+     *
+     * @return string
+     */
+    public function getFeedItemDescription(){
+        return $this->getShortBody();
+    }
+
+
+    /**
+     * This method returns item publication date
+     *
+     * @abstract
+     *
+     * @return \DateTime
+     */
+    public function getFeedItemPubDate(){
+        return $this->createdAt;
+    }
+
+    public function getFeedItemRouteName(){
+        return 'bbit_blog_view';
+    }
+
+    /**
+     * This method returns the parameters for the route.
+     *
+     * @abstract
+     *
+     * @return array
+     */
+    public function getFeedItemRouteParameters(){
+        return array('slug' => $this->slug);
+    }
+
+    public function getFeedItemUrlAnchor(){
+        return '#';
     }
 
 }

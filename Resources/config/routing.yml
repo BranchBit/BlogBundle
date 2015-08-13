@@ -5,6 +5,10 @@ bbit_blog_admin_blog_post:
 bbit_blog_list:
     path:     /
     defaults: { _controller: BBITBlogBundle:Blog:index }
+bbit_blog_rss_view:
+    path:     /rss
+    defaults: { _controller: BBITBlogBundle:Blog:rss }
 bbit_blog_view:
     path:     /{slug}
     defaults: { _controller: BBITBlogBundle:Blog:view }
+
