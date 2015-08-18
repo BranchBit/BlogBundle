@@ -48,8 +48,8 @@ public function registerBundles()
 ```
 bbit_blog:
     extend_template: 'AcmeWebsiteBundle:Default:layout.html.twig' //should contain a block called 'blogContent'
-    disqus_shortname: 'branchbit'
-    addthis_pubid: 'ra-55caf059ba15d648'
+    disqus_shortname: 'AcmeBlog'
+    addthis_pubid: 'ra-55cxxxxxxxxx648'
     btn_class: 'btn-buy hover-effect'
     eko_feed:
         feeds:
