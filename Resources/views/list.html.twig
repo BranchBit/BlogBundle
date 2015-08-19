@@ -9,7 +9,7 @@
             <i class="icon-calendar" style="font-size: small; "> {{ post.createdAt|date('d/m/Y') }}</i>
         </span>
         <p>
-            {{ post.getShortBody|markdown }}
+            {{ post.getShortBody|striptags|markdown }}
             <a class="{{ btn_class }}" href="{{ path('bbit_blog_view', {'slug': post.slug}) }}">Read More</a>
         </p>
 
