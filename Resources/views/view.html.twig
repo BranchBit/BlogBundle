@@ -5,6 +5,27 @@
 
 {% block blogContent %}
 
+    {% javascripts debug=true
+    'bundles/bbitblog/highlighter/scripts/shCore.js'
+    'bundles/bbitblog/highlighter/scripts/shBrushPhp.js'
+    %}
+    <script language="javascript" type="text/javascript" src="{{ asset_url }}" ></script>
+    {% endjavascripts %}
+
+
+    {% stylesheets filter="cssrewrite" debug=true
+    'bundles/bbitblog/highlighter/styles/shCore.css'
+    'bundles/bbitblog/highlighter/styles/shThemeDefault.css'
+    %}
+    <link rel="stylesheet" href="{{ asset_url }}" />
+    {% endstylesheets %}
+
+    <!-- Finally, to actually run the highlighter, you need to include this JS on your page -->
+    <script type="text/javascript">
+        SyntaxHighlighter.all()
+    </script>
+
+
 
         <span class="h1" style="line-height: 0%;">
             <a href="{{ path('bbit_blog_view', {'slug': post.slug}) }}">{{ post.title }}</a>
@@ -44,4 +65,8 @@
             (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
         })();
     </script>
+
+
+
+
 {% endblock %}
