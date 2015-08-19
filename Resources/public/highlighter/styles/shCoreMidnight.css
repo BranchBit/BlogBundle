@@ -55,6 +55,7 @@
 .syntaxhighlighter {
   width: 100% !important;
   margin: 1em 0 1em 0 !important;
+  padding: 0.5em 0 0.5em 0 !important;
   position: relative !important;
   overflow: auto !important;
   font-size: 1em !important;
@@ -132,13 +133,7 @@
   display: inline !important;
 }
 .syntaxhighlighter .toolbar {
-  position: absolute !important;
-  right: 1px !important;
-  top: 1px !important;
-  width: 11px !important;
-  height: 11px !important;
-  font-size: 10px !important;
-  z-index: 10 !important;
+  display: none;
 }
 .syntaxhighlighter .toolbar span.title {
   display: inline !important;
