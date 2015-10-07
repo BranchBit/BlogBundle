@@ -49,7 +49,7 @@ public function registerBundles()
 
 ```
 bbit_blog:
-    extend_template: 'AcmeWebsiteBundle:Default:layout.html.twig' //should contain a block called 'blogContent'
+    extend_template: 'AcmeWebsiteBundle:Default:layout.html.twig' #should contain a block called 'blogContent'
     disqus_shortname: 'AcmeBlog'
     addthis_pubid: 'ra-55cxxxxxxxxx648'
     btn_class: 'btn-buy hover-effect'
@@ -86,4 +86,4 @@ Supports ["Engage by Disqus"](http://publishers.disq.us/engage) for comments.
 Supports ["AddThis"](https://www.addthis.com/get/sharing) for sharing.
 
 
-MUST EDIT README : add eko to composer, add routing, add schema update
+MUST EDIT README : add eko,markdown to composer,addmarkdown to appkernel, add routing, add schema update
