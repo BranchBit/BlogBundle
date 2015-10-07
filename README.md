@@ -86,4 +86,4 @@ Supports ["Engage by Disqus"](http://publishers.disq.us/engage) for comments.
 Supports ["AddThis"](https://www.addthis.com/get/sharing) for sharing.
 
 
-MUST EDIT README : add eko,markdown to composer,addmarkdown to appkernel, add routing, add schema update
+MUST EDIT README : add eko,markdown to composer,addmarkdown to appkernel, add routing, add schema update, add BBITBlogBundle to the assetic.bundle config
