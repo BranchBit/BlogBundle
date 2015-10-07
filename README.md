@@ -14,20 +14,22 @@ Add BBITBlogBundle in your composer.json:
 ```js
 {
     "require": {
-        "bbit/blog-bundle": "dev-master",
+        "knplabs/knp-markdown-bundle": "~1.3",
+        "eko/feedbundle":  "dev-master",
+        "bbit/blog-bundle": "dev-master"
     }
 }
 ```
 
-Now tell composer to download the bundle by running the command:
+Now tell composer to download the bundles by running the command:
 
 ``` bash
-$ php composer.phar update bbit/blog-bundle
+$ php composer.phar install
 ```
 
-Composer will install the bundle to your project's `vendor/BBIT` directory.
+Composer will install the bbit/blog-bundle bundle to your project's `vendor/BBIT` directory.
 
-### Step 2: Enable the bundle
+### Step 2: Enable the bundles
 
 Enable the bundle in the kernel:
 
@@ -39,6 +41,8 @@ public function registerBundles()
 {
     $bundles = array(
         // ...
+        new Knp\Bundle\MarkdownBundle\KnpMarkdownBundle(),
+        new Eko\FeedBundle\EkoFeedBundle(),
         new BBIT\BlogBundle\BBITBlogBundle(),
     );
 }
@@ -62,14 +66,26 @@ bbit_blog:
                     route_name: bbit_blog_rss_view
                 encoding:    'utf-8'
 ```
+### Step 4: 
 
-### Step 4: Add content
+Update your database.
+
+Add BBITBlogBundle to the assetic.bundle config
+
+Add routing file:
+```
+bbit_blog:
+    resource: "@BBITBlogBundle/Resources/config/routing.yml"
+    prefix:   /blog/
+```
+
+### Step 5: Add content
 
 A very simple limited admin-CRUD is located at `/blog/admin/post`.
 
 Posts are rendered in [markdown](https://en.wikipedia.org/wiki/Markdown).
 
-### Step 4: View content
+### Step 6: View content
 
 Blog is located at `/blog`.
 
@@ -86,4 +102,3 @@ Supports ["Engage by Disqus"](http://publishers.disq.us/engage) for comments.
 Supports ["AddThis"](https://www.addthis.com/get/sharing) for sharing.
 
 
-MUST EDIT README : add eko,markdown to composer,addmarkdown to appkernel, add routing, add schema update, add BBITBlogBundle to the assetic.bundle config
