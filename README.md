@@ -84,3 +84,6 @@ Rss feed is located at `/blog/rss`.
 Supports ["Engage by Disqus"](http://publishers.disq.us/engage) for comments.
 
 Supports ["AddThis"](https://www.addthis.com/get/sharing) for sharing.
+
+
+MUST EDIT README : add eko to composer, add routing, add schema update
