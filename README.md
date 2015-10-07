@@ -4,7 +4,7 @@ BlogBundle
 
 A **very simple** blogbundle for symfony2. **STILL A WORK IN PROGRESS**
 
-Can be seen live at [http://branchbit.be/blog](http://branchbit.be/blog)
+Can be seen live at [http://branchbit.be/blog](http://branchbit.be/blog) & [http://statushka.com/blog](http://statushka.com/blog)
 
 
 ### Step 1: Download BBITBlogBundle using composer
